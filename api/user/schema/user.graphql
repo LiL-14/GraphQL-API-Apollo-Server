@@ -8,6 +8,9 @@ const userSchema = gql`
         email: String
     }
 
+    type Query {
+        users: [User]
+    }
 `;
 
 module.exports = userSchema;
