@@ -11,8 +11,7 @@ const arrayUsers = [
 
 const userResolvers = {
     Query: {
-        users: () => arrayUsers,
-        primeiroUser: () => arrayUsers[0]
+        
     }
 }
 
