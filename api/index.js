@@ -1,18 +1,14 @@
 const { ApolloServer } = require("apollo-server");
 const userSchema = require("./user/schema/user.graphql")
-
-const users = [
-    {
-        nome: "Ana",
-        ativo: true,
-    },
-    {
-        nome: "Marcia",
-        ativo: false
-    }
-]
+const userResolvers = require("./user/resolvers/userResolver")
 
 const typeDefs = [userSchema]
-const resolvers = {}
+const resolvers = [userResolvers]
+
 
 const server = new ApolloServer({typeDefs, resolvers});
+
+//para selecionar a porta basta trocar a parte ({url}) por listen:({port:3001}) porta desejada
+server.listen().then(({url}) => {
+    console.log(`Servidor rodando na porta ${url}`) 
+})
