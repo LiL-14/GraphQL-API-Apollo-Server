@@ -21,3 +21,6 @@ const server = new ApolloServer({
 server.listen().then(({url}) => {
     console.log(`Servidor rodando na porta ${url}`) 
 })
+
+//schema é onde se define o que pode ser feito no servidor graphQL
+// o resolver é onde implementamos o schema
