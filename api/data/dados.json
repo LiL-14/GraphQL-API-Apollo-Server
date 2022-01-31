@@ -49,6 +49,14 @@
       "role": 2,
       "createdAt": "2022-01-27T00:00:00.000Z",
       "id": 7
+    },
+    {
+      "nome": "Jonas",
+      "ativo": true,
+      "email": "j@j.com.br",
+      "role": 2,
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "id": 8
     }
   ],
   "roles": [
