@@ -12,14 +12,22 @@ const userSchema = gql`
         createdAt: DateTime
     }
 
+    input UserInput {
+        nome: String
+        ativo: Boolean
+        email: String
+        role: RolesType
+        createdAt: DateTime
+    }
+
     type Role{
         id: ID!
         type: RolesType!
     }
 
     enum RolesType{
-        ESTUDANTE,
-        DOCENTE,
+        ESTUDANTE
+        DOCENTE
         COORDENACAO
     }
 
@@ -30,25 +38,13 @@ const userSchema = gql`
 
     type Mutation {
         
-        adicionaUser(
-        nome: String!,
-        ativo: Boolean!,
-        email: String
-        role: RolesType!
-        createdAt: DateTime): User!
+        adicionaUser(user: UserInput): User!
 
+        atualizaUser(id: ID!, user: UserInput):User!
 
-        atualizaUser(
-        id: ID!,
-        nome: String!,
-        ativo: Boolean!,
-        email: String!,
-        role: RolesType!):User!
-
-        deletaUser(
-            id: ID!
-        ): ID!
+        deletaUser(id: ID!): ID!
     }
+    
 `;
 
 module.exports = userSchema;
