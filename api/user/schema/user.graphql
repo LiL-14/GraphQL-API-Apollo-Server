@@ -40,11 +40,26 @@ const userSchema = gql`
         
         adicionaUser(user: UserInput): User!
 
-        atualizaUser(id: ID!, user: UserInput):User!
+        atualizaUser(id: ID!, user: UserInput): atulizaUserResposta!
 
-        deletaUser(id: ID!): ID!
+        deletaUser(id: ID!): deletaUserResposta!
     }
     
+    interface respostaCustom{
+        code: Int!
+        mensagem: String!
+    }
+
+    type deletaUserResposta implements respostaCustom{
+        code: Int!
+        mensagem: String!
+    }
+
+    type atulizaUserResposta implements respostaCustom{
+        code: Int!
+        mensagem: String!
+        user: User!
+    }
 `;
 
 module.exports = userSchema;

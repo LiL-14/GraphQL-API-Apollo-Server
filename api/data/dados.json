@@ -57,14 +57,6 @@
       "role": 2,
       "createdAt": "2022-01-28T00:00:00.000Z",
       "id": 8
-    },
-    {
-      "nome": "Frederico Roberto",
-      "ativo": false,
-      "email": "f@r.com.br",
-      "role": 3,
-      "createdAt": "2022-01-28T00:00:00.000Z",
-      "id": 9
     }
   ],
   "roles": [
